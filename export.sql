@@ -1,0 +1,759 @@
+--------------------------------------------------------
+--  File created - Sunday-July-09-2017   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table CUSTOMERS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."CUSTOMERS" 
+   (	"ID" NUMBER(*,0), 
+	"NAME" VARCHAR2(25 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table CUSTOMER_NOTIFICATIONS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."CUSTOMER_NOTIFICATIONS" 
+   (	"ID" NUMBER(*,0), 
+	"CUSTOMER_ID" NUMBER(*,0), 
+	"NOTIFICATION_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table DEPARTMENTS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."DEPARTMENTS" 
+   (	"ID" NUMBER(*,0), 
+	"STORE_ID" NUMBER(*,0), 
+	"NAME" VARCHAR2(25 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table DEPARTMENT_CLIENTS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."DEPARTMENT_CLIENTS" 
+   (	"ID" NUMBER(*,0), 
+	"DEPARTMENT_ID" NUMBER(*,0), 
+	"CUSTOMER_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table ITEMS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."ITEMS" 
+   (	"ID" NUMBER(*,0), 
+	"DEPT_ID" NUMBER(*,0), 
+	"NAME" VARCHAR2(25 BYTE), 
+	"PRICE" FLOAT(63)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table NOTIFICATIONS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."NOTIFICATIONS" 
+   (	"ID" NUMBER(*,0), 
+	"TYPE" VARCHAR2(10 BYTE), 
+	"NOTIFICATION_DATE" DATE, 
+	"DEPT_ID" NUMBER(*,0), 
+	"ITEM_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table SHOPPING_CARTS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."SHOPPING_CARTS" 
+   (	"ID" NUMBER(*,0), 
+	"CUSTOMER_ID" NUMBER(*,0), 
+	"BUDGET" FLOAT(63)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table SHOPPING_CART_ITEMS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."SHOPPING_CART_ITEMS" 
+   (	"ID" NUMBER(*,0), 
+	"SHOPPING_CART_ID" NUMBER(*,0), 
+	"ITEM_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table STORES
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."STORES" 
+   (	"ID" NUMBER(*,0), 
+	"NAME" VARCHAR2(25 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table WISH_LISTS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."WISH_LISTS" 
+   (	"ID" NUMBER(*,0), 
+	"CUSTOMER_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table WISH_LIST_ITEMS
+--------------------------------------------------------
+
+  CREATE TABLE "GOGU"."WISH_LIST_ITEMS" 
+   (	"ID" NUMBER(*,0), 
+	"WISH_LIST_ID" NUMBER(*,0), 
+	"ITEM_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Sequence CUSTOMER_NOTIF_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "GOGU"."CUSTOMER_NOTIF_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 161 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence DEPARTMENT_CLIENTS_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "GOGU"."DEPARTMENT_CLIENTS_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 121 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence NOTIF_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "GOGU"."NOTIF_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 62 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence X_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "GOGU"."X_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+REM INSERTING into GOGU.CUSTOMERS
+SET DEFINE OFF;
+Insert into GOGU.CUSTOMERS (ID,NAME) values (1,'Client1');
+Insert into GOGU.CUSTOMERS (ID,NAME) values (2,'Client2');
+Insert into GOGU.CUSTOMERS (ID,NAME) values (3,'Client3');
+REM INSERTING into GOGU.CUSTOMER_NOTIFICATIONS
+SET DEFINE OFF;
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (24,1,2);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (31,2,4);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (25,2,2);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (26,3,2);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (27,1,3);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (28,2,3);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (29,3,3);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (30,1,4);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (32,3,4);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (33,1,5);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (34,2,5);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (35,3,5);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (36,1,6);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (37,2,6);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (38,3,6);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (39,1,7);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (40,2,7);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (41,3,7);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (61,1,22);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (62,2,22);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (63,1,23);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (64,2,23);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (65,3,23);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (66,1,24);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (67,2,24);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (68,3,24);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (69,1,25);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (70,2,25);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (71,3,25);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (72,1,26);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (73,2,26);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (74,3,26);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (75,1,27);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (76,2,27);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (77,3,27);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (78,1,28);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (79,2,28);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (80,3,28);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (81,1,29);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (82,2,29);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (83,3,29);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (84,1,30);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (85,2,30);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (86,3,30);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (87,1,31);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (88,2,31);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (89,3,31);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (90,1,32);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (91,2,32);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (92,3,32);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (93,1,33);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (94,2,33);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (95,3,33);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (96,1,34);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (97,2,34);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (98,3,34);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (99,1,35);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (100,2,35);
+Insert into GOGU.CUSTOMER_NOTIFICATIONS (ID,CUSTOMER_ID,NOTIFICATION_ID) values (101,3,35);
+REM INSERTING into GOGU.DEPARTMENTS
+SET DEFINE OFF;
+Insert into GOGU.DEPARTMENTS (ID,STORE_ID,NAME) values (3,1,'Department3');
+Insert into GOGU.DEPARTMENTS (ID,STORE_ID,NAME) values (1,1,'Department1');
+Insert into GOGU.DEPARTMENTS (ID,STORE_ID,NAME) values (2,1,'Department2');
+REM INSERTING into GOGU.DEPARTMENT_CLIENTS
+SET DEFINE OFF;
+Insert into GOGU.DEPARTMENT_CLIENTS (ID,DEPARTMENT_ID,CUSTOMER_ID) values (41,2,1);
+Insert into GOGU.DEPARTMENT_CLIENTS (ID,DEPARTMENT_ID,CUSTOMER_ID) values (61,2,3);
+Insert into GOGU.DEPARTMENT_CLIENTS (ID,DEPARTMENT_ID,CUSTOMER_ID) values (81,3,2);
+Insert into GOGU.DEPARTMENT_CLIENTS (ID,DEPARTMENT_ID,CUSTOMER_ID) values (82,3,1);
+REM INSERTING into GOGU.ITEMS
+SET DEFINE OFF;
+Insert into GOGU.ITEMS (ID,DEPT_ID,NAME,PRICE) values (4,1,'Item4',10);
+Insert into GOGU.ITEMS (ID,DEPT_ID,NAME,PRICE) values (3,3,'Item12',25);
+Insert into GOGU.ITEMS (ID,DEPT_ID,NAME,PRICE) values (5,2,'Item3',30);
+Insert into GOGU.ITEMS (ID,DEPT_ID,NAME,PRICE) values (1,2,'Item1',100);
+Insert into GOGU.ITEMS (ID,DEPT_ID,NAME,PRICE) values (2,2,'Item2',5);
+REM INSERTING into GOGU.NOTIFICATIONS
+SET DEFINE OFF;
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (2,'REMOVE',to_date('03-JUL-17 18:57:20','DD-MON-YY HH24:MI:SS'),2,1);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (3,'ADD',to_date('03-JUL-17 18:58:49','DD-MON-YY HH24:MI:SS'),2,1);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (4,'REMOVE',to_date('03-JUL-17 22:23:52','DD-MON-YY HH24:MI:SS'),2,1);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (5,'ADD',to_date('03-JUL-17 23:05:57','DD-MON-YY HH24:MI:SS'),2,1);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (6,'REMOVE',to_date('03-JUL-17 23:10:08','DD-MON-YY HH24:MI:SS'),2,1);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (7,'ADD',to_date('03-JUL-17 23:22:10','DD-MON-YY HH24:MI:SS'),2,1);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (22,'REMOVE',to_date('04-JUL-17 15:38:18','DD-MON-YY HH24:MI:SS'),3,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (23,'ADD',to_date('04-JUL-17 15:41:25','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (24,'REMOVE',to_date('04-JUL-17 16:20:02','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (25,'ADD',to_date('04-JUL-17 16:23:09','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (1,'REMOVE',to_date('03-JUL-17 18:33:44','DD-MON-YY HH24:MI:SS'),2,6);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (26,'REMOVE',to_date('04-JUL-17 16:55:06','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (27,'ADD',to_date('04-JUL-17 17:01:29','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (28,'REMOVE',to_date('04-JUL-17 17:24:28','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (29,'ADD',to_date('04-JUL-17 17:45:56','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (30,'REMOVE',to_date('04-JUL-17 17:46:57','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (31,'ADD',to_date('04-JUL-17 17:50:12','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (32,'REMOVE',to_date('04-JUL-17 17:51:12','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (33,'ADD',to_date('04-JUL-17 17:52:01','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (34,'UPDATE',to_date('04-JUL-17 18:00:47','DD-MON-YY HH24:MI:SS'),2,2);
+Insert into GOGU.NOTIFICATIONS (ID,TYPE,NOTIFICATION_DATE,DEPT_ID,ITEM_ID) values (35,'UPDATE',to_date('04-JUL-17 18:01:31','DD-MON-YY HH24:MI:SS'),2,2);
+REM INSERTING into GOGU.SHOPPING_CARTS
+SET DEFINE OFF;
+Insert into GOGU.SHOPPING_CARTS (ID,CUSTOMER_ID,BUDGET) values (1,1,5);
+Insert into GOGU.SHOPPING_CARTS (ID,CUSTOMER_ID,BUDGET) values (2,2,85);
+Insert into GOGU.SHOPPING_CARTS (ID,CUSTOMER_ID,BUDGET) values (3,3,100);
+REM INSERTING into GOGU.SHOPPING_CART_ITEMS
+SET DEFINE OFF;
+Insert into GOGU.SHOPPING_CART_ITEMS (ID,SHOPPING_CART_ID,ITEM_ID) values (1,1,1);
+Insert into GOGU.SHOPPING_CART_ITEMS (ID,SHOPPING_CART_ID,ITEM_ID) values (3,1,2);
+Insert into GOGU.SHOPPING_CART_ITEMS (ID,SHOPPING_CART_ID,ITEM_ID) values (2,2,2);
+REM INSERTING into GOGU.STORES
+SET DEFINE OFF;
+Insert into GOGU.STORES (ID,NAME) values (1,'Store1');
+Insert into GOGU.STORES (ID,NAME) values (2,'Store2');
+REM INSERTING into GOGU.WISH_LISTS
+SET DEFINE OFF;
+Insert into GOGU.WISH_LISTS (ID,CUSTOMER_ID) values (1,1);
+Insert into GOGU.WISH_LISTS (ID,CUSTOMER_ID) values (2,3);
+Insert into GOGU.WISH_LISTS (ID,CUSTOMER_ID) values (3,2);
+REM INSERTING into GOGU.WISH_LIST_ITEMS
+SET DEFINE OFF;
+Insert into GOGU.WISH_LIST_ITEMS (ID,WISH_LIST_ID,ITEM_ID) values (2,1,5);
+Insert into GOGU.WISH_LIST_ITEMS (ID,WISH_LIST_ID,ITEM_ID) values (3,3,5);
+--------------------------------------------------------
+--  DDL for Index UNIQUE_CUST_ID
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GOGU"."UNIQUE_CUST_ID" ON "GOGU"."WISH_LISTS" ("CUSTOMER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GOGU"."ID_PK" ON "GOGU"."NOTIFICATIONS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_DEPT_CLIENTS
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GOGU"."UNIQUE_DEPT_CLIENTS" ON "GOGU"."DEPARTMENT_CLIENTS" ("DEPARTMENT_ID", "CUSTOMER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_WL_ITEMS
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GOGU"."UNIQUE_WL_ITEMS" ON "GOGU"."WISH_LIST_ITEMS" ("WISH_LIST_ID", "ITEM_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_SC_ITEMS
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GOGU"."UNIQUE_SC_ITEMS" ON "GOGU"."SHOPPING_CART_ITEMS" ("SHOPPING_CART_ID", "ITEM_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_CUSTOMER_ID
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GOGU"."UNIQUE_CUSTOMER_ID" ON "GOGU"."SHOPPING_CARTS" ("CUSTOMER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Trigger AFTER_INSERT_ITEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."AFTER_INSERT_ITEM" 
+after insert on items
+for each row
+begin
+  insert into notifications values(1,'ADD' ,systimestamp,:new.dept_id, :new.id);
+end;
+/
+ALTER TRIGGER "GOGU"."AFTER_INSERT_ITEM" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger AFTER_INSERT_SC_ITEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."AFTER_INSERT_SC_ITEM" 
+after insert on shopping_cart_items
+for each row
+declare deptid int;
+  customerid int;
+  flag boolean;
+begin
+  flag := false;
+  select dept_id into deptid from items where id = :new.item_id;
+  select customer_id into customerid from shopping_carts where id = :new.shopping_cart_id;
+  for rec in (select * from department_clients)
+    loop
+      if rec.department_id = deptid and rec.customer_id = customerid
+        then
+          flag := true;
+      end if;
+    end loop;
+      if flag = false
+        then
+          insert into department_clients values(1, deptid, customerid);
+      end if;
+end;
+/
+ALTER TRIGGER "GOGU"."AFTER_INSERT_SC_ITEM" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger AFTER_INSERT_WL_ITEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."AFTER_INSERT_WL_ITEM" 
+after insert on wish_list_items
+for each row
+declare deptid int;
+  customerid int;
+  flag boolean;
+begin
+  flag := false;
+  select dept_id into deptid from items where id = :new.item_id;
+  select customer_id into customerid from wish_lists where id = :new.wish_list_id;
+  for rec in (select * from department_clients)
+    loop
+      if rec.department_id = deptid and rec.customer_id = customerid
+        then
+          flag := true;
+      end if;
+    end loop;
+      if flag = false
+        then
+          insert into department_clients values(1, deptid, customerid);
+      end if;
+end;
+/
+ALTER TRIGGER "GOGU"."AFTER_INSERT_WL_ITEM" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger BEFORE_DELETE_SC_ITEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."BEFORE_DELETE_SC_ITEM" 
+before delete on shopping_cart_items
+for each row
+declare price real;
+begin
+  if MY_PACKAGE.my_flag = false then
+    select items.price into price from items where items.id = :old.item_id;
+    update shopping_carts set shopping_carts.budget = shopping_carts.budget + price where shopping_carts.id = :old.shopping_cart_id;
+    end if;
+end;
+/
+ALTER TRIGGER "GOGU"."BEFORE_DELETE_SC_ITEM" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger BEFORE_INSERT_SC_ITEMS
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."BEFORE_INSERT_SC_ITEMS" 
+before insert on shopping_cart_items
+for each row
+  declare 
+    v_price real;
+    v_budget real;
+begin
+  select items.price into v_price from items where items.id = :new.item_id;
+  select shopping_carts.budget into v_budget from shopping_carts where id = :new.shopping_cart_id;
+  if 
+    v_budget - v_price >= 0 
+    then 
+      update shopping_carts set budget = v_budget - v_price where id = :new.shopping_cart_id; 
+    else
+      RAISE_APPLICATION_ERROR(-20001, 'This item cannot be added this shopping_cart because it s price exceeds budget!');
+  end if;
+end;
+/
+ALTER TRIGGER "GOGU"."BEFORE_INSERT_SC_ITEMS" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger BEFORE_UPDATE_ITEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."BEFORE_UPDATE_ITEM" 
+before update on items
+for each row
+declare CURSOR curs_select is select shopping_carts.id, shopping_carts.budget, shopping_cart_items.item_id from shopping_carts join shopping_cart_items 
+              on shopping_carts.id = shopping_cart_items.shopping_cart_id where shopping_cart_items.item_id = :old.id;
+ rec curs_select%rowtype;
+BEGIN
+  for rec in curs_select
+loop
+        if rec.budget is not NULL and rec.budget + :old.price - :new.price >= 0  
+          then update shopping_carts set shopping_carts.budget = shopping_carts.budget + :old.price - :new.price where shopping_carts.id = rec.id;
+        else
+                  MY_PACKAGE.my_flag := true;
+                  delete from shopping_cart_items where item_id = :old.id and shopping_cart_id = rec.id ;
+                  update shopping_carts set shopping_carts.budget = shopping_carts.budget + :old.price where shopping_carts.id = rec.id and rec.item_id = :old.id;                  
+        end if;  
+    end loop;
+      MY_PACKAGE.my_flag := false;
+      insert into notifications values(1,'UPDATE' ,systimestamp,:new.dept_id, :new.id);
+end;
+/
+ALTER TRIGGER "GOGU"."BEFORE_UPDATE_ITEM" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger CUSTOMER_NOTIF_AUTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."CUSTOMER_NOTIF_AUTO" 
+BEFORE INSERT ON customer_notifications
+FOR EACH ROW
+BEGIN
+  select customer_notif_seq.nextval into :new.id from dual;
+end;
+/
+ALTER TRIGGER "GOGU"."CUSTOMER_NOTIF_AUTO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger DELETE_ITEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."DELETE_ITEM" 
+before delete on items
+for each row
+begin
+    MY_PACKAGE.my_flag := true;
+for rec in
+  (select shopping_carts.id from shopping_carts join shopping_cart_items on shopping_carts.ID = shopping_cart_items.shopping_cart_id where shopping_cart_items.item_id = :old.id)
+  loop
+    MY_PACKAGE.my_flag := true;
+    update shopping_carts set budget = budget + :old.price where id = rec.id; 
+    delete from shopping_cart_items where item_id = :old.id;
+    delete from wish_list_items where item_id = :old.id;
+    MY_PACKAGE.my_flag := true;
+  end loop;
+  MY_PACKAGE.my_flag := false;
+  insert into notifications values(1,'REMOVE' ,systimestamp,:old.dept_id, :old.id);
+end;
+/
+ALTER TRIGGER "GOGU"."DELETE_ITEM" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger DEPARTMENT_CLIENTS_AUTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."DEPARTMENT_CLIENTS_AUTO" 
+BEFORE INSERT ON department_clients
+FOR EACH ROW
+BEGIN
+  select department_clients_seq.nextval into :new.id from dual;
+end;
+/
+ALTER TRIGGER "GOGU"."DEPARTMENT_CLIENTS_AUTO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger NOTIFICATION_INSERTED
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."NOTIFICATION_INSERTED" 
+AFTER INSERT ON notifications
+FOR EACH ROW
+DECLARE id_dept int;
+  id_notif int;
+BEGIN 
+  SELECT :new.dept_id into id_dept from dual;
+  SELECT :new.id into id_notif from dual;
+  FoR rec IN (SELECT customer_id FROM department_clients WHERE department_id = id_dept)
+    LOOP
+      INSERT INTO customer_notifications VALUES (1, rec.customer_id, id_notif);
+    END LOOP;
+  END;
+/
+ALTER TRIGGER "GOGU"."NOTIFICATION_INSERTED" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger NOTIF_AUTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "GOGU"."NOTIF_AUTO" 
+BEFORE INSERT ON NOTIFICATIONS
+FOR EACH ROW
+BEGIN
+  select notif_seq.nextval into :new.id from dual;
+end;
+/
+ALTER TRIGGER "GOGU"."NOTIF_AUTO" ENABLE;
+--------------------------------------------------------
+--  DDL for Package MY_PACKAGE
+--------------------------------------------------------
+
+  CREATE OR REPLACE PACKAGE "GOGU"."MY_PACKAGE" is my_flag boolean; end;
+
+/
+--------------------------------------------------------
+--  Constraints for Table DEPARTMENT_CLIENTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."DEPARTMENT_CLIENTS" ADD CONSTRAINT "UNIQUE_DEPT_CLIENTS" UNIQUE ("DEPARTMENT_ID", "CUSTOMER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "GOGU"."DEPARTMENT_CLIENTS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "GOGU"."DEPARTMENT_CLIENTS" MODIFY ("CUSTOMER_ID" NOT NULL ENABLE);
+  ALTER TABLE "GOGU"."DEPARTMENT_CLIENTS" MODIFY ("DEPARTMENT_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table DEPARTMENTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."DEPARTMENTS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "GOGU"."DEPARTMENTS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table NOTIFICATIONS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."NOTIFICATIONS" ADD CONSTRAINT "ID_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "GOGU"."NOTIFICATIONS" MODIFY ("TYPE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table CUSTOMERS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."CUSTOMERS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "GOGU"."CUSTOMERS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ITEMS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."ITEMS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "GOGU"."ITEMS" MODIFY ("PRICE" NOT NULL ENABLE);
+  ALTER TABLE "GOGU"."ITEMS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table WISH_LISTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."WISH_LISTS" ADD CONSTRAINT "UNIQUE_CUST_ID" UNIQUE ("CUSTOMER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "GOGU"."WISH_LISTS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table WISH_LIST_ITEMS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."WISH_LIST_ITEMS" ADD CONSTRAINT "UNIQUE_WL_ITEMS" UNIQUE ("WISH_LIST_ID", "ITEM_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "GOGU"."WISH_LIST_ITEMS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table STORES
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."STORES" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CUSTOMER_NOTIFICATIONS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."CUSTOMER_NOTIFICATIONS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SHOPPING_CARTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."SHOPPING_CARTS" ADD CONSTRAINT "UNIQUE_CUSTOMER_ID" UNIQUE ("CUSTOMER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "GOGU"."SHOPPING_CARTS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SHOPPING_CART_ITEMS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."SHOPPING_CART_ITEMS" ADD CONSTRAINT "UNIQUE_SC_ITEMS" UNIQUE ("SHOPPING_CART_ID", "ITEM_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "GOGU"."SHOPPING_CART_ITEMS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table CUSTOMER_NOTIFICATIONS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."CUSTOMER_NOTIFICATIONS" ADD CONSTRAINT "FK_CUST_ID" FOREIGN KEY ("CUSTOMER_ID")
+	  REFERENCES "GOGU"."CUSTOMERS" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DEPARTMENTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."DEPARTMENTS" ADD CONSTRAINT "FK_STORE_ID" FOREIGN KEY ("STORE_ID")
+	  REFERENCES "GOGU"."STORES" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DEPARTMENT_CLIENTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."DEPARTMENT_CLIENTS" ADD CONSTRAINT "FK_CL_ID" FOREIGN KEY ("CUSTOMER_ID")
+	  REFERENCES "GOGU"."CUSTOMERS" ("ID") ENABLE;
+  ALTER TABLE "GOGU"."DEPARTMENT_CLIENTS" ADD CONSTRAINT "FK_DEPART_ID" FOREIGN KEY ("DEPARTMENT_ID")
+	  REFERENCES "GOGU"."DEPARTMENTS" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ITEMS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."ITEMS" ADD CONSTRAINT "FK_DEPT_ID" FOREIGN KEY ("DEPT_ID")
+	  REFERENCES "GOGU"."DEPARTMENTS" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table NOTIFICATIONS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."NOTIFICATIONS" ADD CONSTRAINT "FK_NOTIF_DEPT_ID" FOREIGN KEY ("DEPT_ID")
+	  REFERENCES "GOGU"."DEPARTMENTS" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SHOPPING_CARTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."SHOPPING_CARTS" ADD CONSTRAINT "FK_CUSTOMER_ID" FOREIGN KEY ("CUSTOMER_ID")
+	  REFERENCES "GOGU"."CUSTOMERS" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SHOPPING_CART_ITEMS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."SHOPPING_CART_ITEMS" ADD CONSTRAINT "FK_ITEM_ID" FOREIGN KEY ("ITEM_ID")
+	  REFERENCES "GOGU"."ITEMS" ("ID") ENABLE;
+  ALTER TABLE "GOGU"."SHOPPING_CART_ITEMS" ADD CONSTRAINT "FK_SHOPPING_CART_ID" FOREIGN KEY ("SHOPPING_CART_ID")
+	  REFERENCES "GOGU"."SHOPPING_CARTS" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table WISH_LISTS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."WISH_LISTS" ADD CONSTRAINT "FK_CLIENT_ID" FOREIGN KEY ("CUSTOMER_ID")
+	  REFERENCES "GOGU"."CUSTOMERS" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table WISH_LIST_ITEMS
+--------------------------------------------------------
+
+  ALTER TABLE "GOGU"."WISH_LIST_ITEMS" ADD CONSTRAINT "FK_WISH_LIST_ID" FOREIGN KEY ("WISH_LIST_ID")
+	  REFERENCES "GOGU"."WISH_LISTS" ("ID") ENABLE;
+  ALTER TABLE "GOGU"."WISH_LIST_ITEMS" ADD CONSTRAINT "FK_WL_ITEM_ID" FOREIGN KEY ("ITEM_ID")
+	  REFERENCES "GOGU"."ITEMS" ("ID") ENABLE;
