@@ -1,7 +1,7 @@
   ++ The store ++
 
 
- *  This project purpose is to build  a software that connects to an Oracle database and executes various operations over this,
+ *  This Java project purpose is to build  a software that connects to an Oracle database and executes various operations over this,
  *  and commits those changes into database.
  *  Simulating an online store, this database is structured on departments, items, customers, shopping carts, wish lists, etc
  *  and each of those has its own attributes and "connections".
